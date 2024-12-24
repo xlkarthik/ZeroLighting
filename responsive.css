@@ -1,0 +1,191 @@
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {  
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+ 
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) {
+
+
+    .product-wrapper {
+        flex-wrap: wrap;
+    }
+    .product-imgWrapper {
+        width: 100%;
+        height: 500px; 
+    }
+    .product-details {
+        width: 100%;
+        height: 100%;
+    }
+        
+    .product-subtotal {
+        position: inherit;
+    }
+    .product {
+        height: auto;
+    }
+    
+    .container-zero {
+    width: 100%;
+    border-bottom: 0px;
+}
+
+    .header {
+        padding-bottom: 0px;
+    }
+}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+.product-imgWrapper {
+	width: 100%;
+	height: 500px;
+	border-radius: 0px;
+}
+.product-img img {
+    border-radius: 0px;
+}
+.product-imgWrapper {
+    width: 100%;
+    height: 400px;
+    border-radius: 0px;
+}
+.product-view {
+    font-size: 12px;
+    bottom: 15px;
+    right: 15px;
+    padding: 7px 18px;
+}
+.product-view span.icon img {
+    max-width: 16px;
+}
+
+.product-wrapper {
+    flex-wrap: wrap;
+    gap: 0px;
+    padding: 0px;
+}
+.product-details {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+}
+.section.product .container {
+    padding: 0px;
+}
+.product-info {
+    padding: 18px 15px;
+}
+.product-selectItem {
+    flex: 0 0 auto;
+    width: 90px;
+}
+.product-selectItem-sub {
+    flex: 0 0 auto;
+    width: 80px;
+}
+.product-selectItem .content p {
+    font-size: 12px;
+    line-height: 16px;
+}
+.product-select {
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.product-info .title h4 {
+    font-size: 16px;
+}
+.product-info .title {
+    margin-bottom: 13px;
+}
+.product-subtotal {
+    padding: 15px 15px;
+}
+.product-widget h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+.subtotal-info h6 {
+    font-size: 14px;
+    font-weight: 600;
+}
+.subtotal-info p {
+    font-size: 14px;
+    font-weight: 600;
+}
+.navigate-btns button {
+    font-size: 14px;
+}
+.logo a {
+
+}
+.header-moboLink {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.header-moboLink a img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.product-subtotal {
+    padding: 15px 15px;
+    box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+}
+.section.product {
+    padding-bottom: 0px;
+}
+
+
+.header-menu{
+    position: fixed;
+    left: -100%;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: .3s;
+    z-index: 111;
+    padding-top: 100px;
+}
+.header-menu.active{
+    left: 0px;
+}
+
+.header-menu button.close{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 18px;
+    right: 16px;
+}
+
+.header-menu ul{
+    flex-direction: column;
+
+}
+
+
+
+}
+
+/* Small devices  */
+@media (max-width: 576px) {
+    
+}

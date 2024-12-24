@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Lighting Configurator</title>
+    <!-- css-start -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/css/swiper.min.css" />
+
+    <link rel="stylesheet" href="https://charpstar.se/Configurator/Zero/Product/style.css" />
+    <link rel="stylesheet" href="https://charpstar.se/Configurator/Zero/Product/responsive.css" />
+    <script type="module" src="model-viewer-zero.js"></script>
+
+    <!-- css-start-end -->
+    <style>
+        .model-viewer-wrapper {
+            position: relative;
+            padding-top: 100%;
+            margin: 0;
+          }
+    
+          model-viewer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background-color: #F0F4F4;
+          }
+    </style>
+
+    <style type="text/css">
+        @font-face{font-family:calluna-sans;src:url(https://use.typekit.net/af/8b7e6c/000000000000000077359ce7/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/8b7e6c/000000000000000077359ce7/30/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/8b7e6c/000000000000000077359ce7/30/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- main -->
+    <main>
+        <header class="header">
+            <!-- header-top -->
+
+            <div class="container-zero">
+                <div class="logo text-center">
+                    Zero
+                </div>
+
+            </div>
+            <!-- header-top-end -->
+
+            <!-- header-menu-end -->
+        </header>
+        <!-- sections-start -->
+        <section class="section product">
+            <div id="QRModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="QRClose">&times;</span>
+                    <span class="QRTitle">Zero Lighting AR</span>
+                    <img id="rbQRImage" class="qrImage" src="">
+                    <span class="QRText">Scan the QR Code on your Mobile device to view the Configured Zero Lighting Product in Augmented Reality</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="product-wrapper">
+                    <!-- product-thumbnail -->
+                    <div class="product-imgWrapper">
+                        <div class="product-img">
+                            <model-viewer ar-modes="quick-look webxr scene-viewer" id="threeDViewer" src="" interaction-prompt="none" field-of-view="34deg" environment-image="neutral" poster="" shadow-intensity="0" shadow-softness="0" camera-controls>
+                                <div class="cmv-tr-button-container">
+                                    <div class="charpstar-button-fullscreen">
+                                        <button id="cmv-fullScreenButton" data-tech="charpstar-ar" style="margin-bottom: 10px; font-size: 14px; display: flex; align-items: center; justify-content: space-evenly; background-color: rgba(255, 255, 255, 0.9); padding: 15px 15px; border: none; cursor: pointer; ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M24 9h-2v-5h-7v-2h9v7zm-9 13v-2h7v-5h2v7h-9zm-15-7h2v5h7v2h-9v-7zm9-13v2h-7v5h-2v-7h9z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="charpstar-button-dimension">
+                                        <button id="cmv-dimensionButton" data-tech="charpstar-ar" style="margin-bottom: 10px; font-size: 14px; display: flex; align-items: center; justify-content: space-evenly; background-color: rgba(255, 255, 255, 0.9); padding: 15px 15px; border: none; cursor: pointer; ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M0 18.344l5.656 5.656 18.344-18.344-5.657-5.656-18.343 18.344zm21.171-12.687l-15.514 15.515-2.829-2.829 1.04-1.009 2.122 2.122.707-.707-2.122-2.122 1.414-1.414 1.414 1.414.708-.707-1.414-1.414 1.414-1.414 1.414 1.414.707-.707-1.414-1.414 1.414-1.414 2.122 2.121.707-.707-2.121-2.121 1.414-1.414 1.414 1.414.707-.707-1.414-1.414 1.414-1.414 1.414 1.414.707-.707-1.414-1.414 1.414-1.415 2.121 2.122.707-.707-2.121-2.122 1.039-1.071 2.829 2.828zm-16.241 4.929l-4.93-4.93 5.656-5.656 4.93 4.93-2.844 2.843-.707-.708 1.414-1.414-1.076-1.076-1.398 1.399-.707-.707 1.398-1.398-1.009-1.04-2.829 2.828 3.516 3.515-1.414 1.414zm11.297 5.672l.707.707 1.414-1.414 1.046 1.046-1.415 1.413.707.707 1.415-1.413 1.071 1.039-2.829 2.828-3.515-3.515-1.414 1.414 4.93 4.93 5.656-5.657-4.93-4.929-2.843 2.844z"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div slot="ar-button" class="charpstar-button-AR" id="charpstarARViewer">
+                                    <button slot="ar-button" id="default-ar-button" type="button" style="margin-bottom: 10px; font-size: 14px; display: flex; align-items: center; justify-content: space-evenly; background-color: rgba(255, 255, 255, 0.9); padding: 12px 11px; border: none; cursor: pointer; ">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.5 15.5L6.11369 13.7817M10.5 15.5L9.88631 13.7817M6.11369 13.7817L8 8.5L9.88631 13.7817M6.11369 13.7817H9.88631" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13 15.5V12.7M15.8571 12.7C16.5714 12.7 18 12.7 18 10.6C18 8.5 16.5714 8.5 15.8571 8.5L13 8.5V12.7M15.8571 12.7C14.7143 12.7 13.4762 12.7 13 12.7M15.8571 12.7L18 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M2 18.4V5.6C2 5.26863 2.26863 5 2.6 5H21.4C21.7314 5 22 5.26863 22 5.6V18.4C22 18.7314 21.7314 19 21.4 19H2.6C2.26863 19 2 18.7314 2 18.4Z" stroke="currentColor" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </model-viewer>
+
+                        </div>
+                    </div>
+                    <!-- product-thumbnail-end -->
+                    <!-- product-details -->
+                    <div class="product-details">
+                        <!-- product-detailItem -->
+                        <div class="product-detailItem">
+                            <!-- product-infos -->
+                            <div class="product-info">
+                                <div class="title">
+                                    <h4>Select Product</h4>
+                                </div>
+                                <!-- title-end -->
+                                <!-- product-selet -->
+                                <div class="product-select">
+                                    <div class="swiper product-sliderActive">
+                                        <div class="swiper-wrapper">
+                                            <!-- single-product-select -->
+                                            <div data-product="compose" class="product-selectItem main-product main-item active swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/inombo.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Compose</p>
+                                                </div>
+                                            </div>
+
+                                            <div data-product="slice-inompe" class="product-selectItem main-product main-item swiper-slide ">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Slice.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Slize</p>
+                                                </div>
+                                            </div>
+
+                                            <div data-product="plant-bollard-utompo" class="product-selectItem main-product main-item swiper-slide ">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Plant-Bollard.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Plant Bollard</p>
+                                                </div>
+                                            </div>
+
+                                            <div data-product="fog-inompe" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Fog.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Fog</p>
+                                                </div>
+                                            </div>
+                                            <div data-product="landscape-inompe" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Landscape.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Landscape</p>
+                                                </div>
+                                            </div>
+                                            <div data-product="camouflage-inompe" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Camouflage.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Camouflage</p>
+                                                </div>
+                                            </div>
+                                            <div data-product="fisherman-inompe" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Fisherman.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Fisherman</p>
+                                                </div>
+                                            </div>
+                                            <div data-product="grid-inompe" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Grid.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Grid</p>
+                                                </div>
+                                            </div>
+                                            <div data-product="curve-cluster" class="product-selectItem main-product main-item swiper-slide">
+                                                <div class="img">
+                                                    <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Curve-cluster.jpg" alt="" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Curve Cluster</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div id="cmvPlantBollard" class="cmv-hide">
+                                    <div id="cmvselectType">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Type</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-abs-container">
+                                                <div data-type="round" class="button cmv-bollard-type cmv-grey-2 active">Round</div>
+                                            </div>
+                                            <div class="main-item  select-abs-container">
+                                                <div data-type="cylinder" class="button cmv-bollard-type cmv-grey-2">Cylinder</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="cmvSelectCylinderSize" class="cmv-hide">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-abs-container">
+                                                <div data-size="large" class="button cmv-bollard-size cmv-grey-2 active">Large</div>
+                                            </div>
+                                            <div class="main-item  select-abs-container">
+                                                <div data-size="small" class="button cmv-bollard-size cmv-grey-2">Small</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvSelectCylindeColor">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-abs-container">
+                                                <div data-color="black-ral-9005" class="button cmv-bollard-color cmv-grey-2 active">Black</div>
+                                            </div>
+                                            <div class="main-item  select-abs-container">
+                                                <div data-color="corten-finish" class="button cmv-bollard-color cmv-grey-2">Corten</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cmvSlize" class="cmv-hide">
+                                    <div id="selectAbs">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Number of Abs</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-abs-container">
+                                                <div data-abs="2abs" class="button cmv-abs-count cmv-grey-2 active">2 Abs</div>
+                                            </div>
+                                            <div class="main-item  select-abs-container">
+                                                <div data-abs="3abs" class="button cmv-abs-count cmv-grey-2">3 Abs</div>
+                                            </div>
+                                            <div class="main-item  select-abs-container">
+                                                <div data-abs="4abs" class=" cmv-abs-count button cmv-grey-2">4 Abs</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="optionBSize">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Option B Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-3-size-container">
+                                                <div data-size="580mm" class="button cmv-abs-3-size cmv-grey-2 active">580mm</div>
+                                            </div>
+                                            <div class="main-item  select-3-size-container">
+                                                <div data-size="800mm" class="button cmv-abs-3-size cmv-grey-2">800mm</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvAbs4">
+                                        <div id="colorTitle" class="title">
+                                            <h4>A Options</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-color="4-dark-grey" style="background-color: darkgray;" class="button active cmv-4-color"></div>
+                                                <div class="button-content"> Dark Grey </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="4-light-grey" style="background-color: lightgray;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Light Grey </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="4-yellow" style="background-color: #F5F591;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Yellow </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="4-green" style="background-color: #495F48;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="4-pink" style="background-color: pink;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Pink </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="4-beige" style="background-color: #d9b99b;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Beige </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="4-brown" style="background-color: #6F4E37;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Brown </div>
+                                            </div>
+
+                                            <div class="main-item  ">
+                                                <div data-color="4-red" style="background-color: #ff4a42;" class="button cmv-4-color"></div>
+                                                <div class="button-content"> Red </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="cmvAbs3">
+                                        <div id="colorTitle" class="title">
+                                            <h4>B Options</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item ">
+                                                <div data-color="3-light-grey" style="background-color: lightgray;" class="button active cmv-3-color"></div>
+                                                <div class="button-content"> Light Grey </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="3-dark-grey" style="background-color: darkgray;" class="button  cmv-3-color"></div>
+                                                <div class="button-content"> Dark Grey </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="cmvAbs2" class="cmv-hide">
+                                        <div id="colorTitle" class="title">
+                                            <h4>C Options</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-color="2-dark-grey" style="background-color: darkgray;" class="button active cmv-2-color"></div>
+                                                <div class="button-content"> Dark Grey </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="2-light-grey" style="background-color: lightgray;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Light Grey </div>
+                                            </div>
+                                            <div class="main-item">
+                                                <div data-color="2-yellow" style="background-color: #F5F591;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Yellow </div>
+                                            </div>
+                                            <div class="main-item">
+                                                <div data-color="2-green" style="background-color: #495F48;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                            <div class="main-item">
+                                                <div data-color="2-pink" style="background-color: pink;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Pink </div>
+                                            </div>
+                                            <div class="main-item">
+                                                <div data-color="2-beige" style="background-color: #d9b99b;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Beige </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="2-brown" style="background-color: #6F4E37;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Brown </div>
+                                            </div>
+
+                                            <div class="main-item ">
+                                                <div data-color="2-red" style="background-color: #ff4a42;" class="button cmv-2-color"></div>
+                                                <div class="button-content"> Red </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="cmvAbs1" class="cmv-hide">
+                                        <div id="colorTitle" class="title">
+                                            <h4>D Options</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-color="1-dark-grey" style="background-color: darkgray;" class="button active cmv-1-color"></div>
+                                                <div class="button-content"> Dark Grey </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="1-light-grey" style="background-color: lightgray;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Light Grey </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="1-yellow" style="background-color: #F5F591;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Yellow </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="1-green" style="background-color: #495F48;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="1-pink" style="background-color: pink;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Pink </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="1-beige" style="background-color: #d9b99b;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Beige </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="1-brown" style="background-color: #6F4E37;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Brown </div>
+                                            </div>
+
+                                            <div class="main-item  ">
+                                                <div data-color="1-red" style="background-color: #ff4a42;" class="button cmv-1-color"></div>
+                                                <div class="button-content"> Red </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="cmvCompose">
+                                    <div class="title">
+                                        <h4>Select Sub Product</h4>
+                                    </div>
+                                    <!-- title-end -->
+                                    <!-- product-selet -->
+                                    <div class="product-select">
+                                        <div class="swiper product-sliderActive-sub">
+                                            <div class="swiper-wrapper">
+                                                <!-- single-product-select -->
+                                                <div data-sub-product="bord" class="product-selectItem product-selectItem-sub main-item active swiper-slide ">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/inombo.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Bord</p>
+                                                    </div>
+                                                </div>
+                                                <div data-sub-product="singel" class="product-selectItem product-selectItem-sub main-item swiper-slide">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/inompe.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Singelpendel</p>
+                                                    </div>
+                                                </div>
+                                                <!-- single-product-select-end -->
+                                                <!-- single-product-select -->
+                                                <div data-sub-product="rail" class="product-selectItem product-selectItem-sub main-item swiper-slide ">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/composerail.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Rail</p>
+                                                    </div>
+                                                </div>
+                                                <!-- single-product-select-end -->
+                                                <!-- single-product-select -->
+                                                <div data-sub-product="circle" class="product-selectItem product-selectItem-sub main-item swiper-slide ">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/composecircle.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Circle</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="selectGroups" class="cmv-hide">
+                                        <div id="colorTitle" class="title">
+                                            <h4>No of Shades</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-group-container">
+                                                <div data-shade-no="groupof6" class="button cmv-shade-count cmv-grey-2 active">Group of 6</div>
+                                            </div>
+                                            <div class="main-item  select-group-container">
+                                                <div data-shade-no="groupof9" class="button cmv-shade-count cmv-grey-2">Group of 9</div>
+                                            </div>
+                                            <div class="main-item  select-group-container">
+                                                <div data-shade-no="groupof3" class=" cmv-shade-count button cmv-grey-2">Group of 3</div>
+                                            </div>
+                                            <div class="main-item  select-group-container">
+                                                <div data-shade-no="groupof5" class="cmv-shade-count button cmv-grey-2">Group of 5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Select Color Start-->
+                                    <div id="cmvBaseColor">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Base Fitting Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-color="base-white" class="button cmv-white active cmv-base-fitting-color"></div>
+                                                <div class="button-content"> White </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="base-black" class="button cmv-black cmv-base-fitting-color"></div>
+                                                <div class="button-content"> Black </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="base-grey" class="button cmv-grey cmv-base-fitting-color"></div>
+                                                <div class="button-content"> Grey </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="base-green" class="button cmv-green cmv-base-fitting-color"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvMaterialSelect">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Shade Options</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-material="noshade" class="button cmv-shade-material-container cmv-grey-2 active">No Shade</div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-material="metal" class="button cmv-shade-material-container cmv-grey-2">Metal</div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-material="glass" class=" cmv-shade-material-container button cmv-grey-2">Glass</div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-material="perforated" class=" cmv-shade-material-container button cmv-grey-2">Perforated </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvSizeSelect" class="cmv-hide">
+                                        <div id="sizeTitle" class="title">
+                                            <h4>Shade Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div id="var2" class="main-item ">
+                                                <div data-size="small" class="button cmv-grey-2  cmv-shade-size-container active">Small</div>
+                                            </div>
+                                            <div id="var3" class="main-item ">
+                                                <div data-size="large" class="button cmv-shade-size-container cmv-grey-2">Large</div>
+                                            </div>
+                                            <div id="var3" class="main-item ">
+                                                <div data-size="xl" class="button cmv-shade-size-container cmv-grey-2">XL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvShadeColor" class="cmv-hide">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Shade Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select shade-color-select">
+                                            <div data-color="shade-clear" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-clear active"></div>
+                                                <div class="button-content"> Clear </div>
+                                            </div>
+                                            <div data-color="shade-white" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-white"></div>
+                                                <div class="button-content"> White </div>
+                                            </div>
+                                            <div data-color="shade-black" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-black"></div>
+                                                <div class="button-content"> Black </div>
+                                            </div>
+                                            <div data-color="shade-grey" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-grey"></div>
+                                                <div class="button-content"> Grey </div>
+                                            </div>
+                                            <div data-color="shade-green" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-green"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                            <div data-color="shade-copper" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-copper"></div>
+                                                <div class="button-content"> Copper </div>
+                                            </div>
+                                            <div data-color="shade-brass" class="main-item color-container">
+                                                <div class="button cmv-shade-color cmv-brass"></div>
+                                                <div class="button-content"> Brass </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div id="cmvCurveCluster"  class="cmv-hide">
+                                    <div class="title">
+                                        <h4>Select Sub Product</h4>
+                                    </div>
+                                    <!-- title-end -->
+                                    <!-- product-selet -->
+                                    <div class="product-select">
+                                        <div class="swiper product-sliderActive-sub">
+                                            <div class="swiper-wrapper">
+                                                <!-- single-product-select -->
+                                                <div data-product-material="globe" class="product-selectItem product-selectMat-sub main-item active swiper-slide ">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Cluster-globe.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Glass</p>
+                                                    </div>
+                                                </div>
+                                                <div data-product-material="metal" class="product-selectItem product-selectMat-sub main-item swiper-slide">
+                                                    <div class="img-sub">
+                                                        <img src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/images/icons/Cluster-metal.jpg" alt="" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Metal</p>
+                                                    </div>
+                                                </div>
+                                                <!-- single-product-select-end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="selectClusters">
+                                        <div id="colorTitleCluster" class="title">
+                                            <h4>Cluster Count</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-cluster-container">
+                                                <div data-cluster-no="single" class="button cmv-cluster-count cmv-grey-2 active">Single</div>
+                                            </div>
+                                            <div class="main-item  select-cluster-container">
+                                                <div data-cluster-no="clusterof5" class="button cmv-cluster-count cmv-grey-2">Cluster of 5</div>
+                                            </div>
+                                            <div class="main-item  select-cluster-container">
+                                                <div data-cluster-no="clusterof9" class=" cmv-cluster-count button cmv-grey-2">Cluster of 9</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Select Color Start-->
+                                    <div id="cmvBaseClusterColor">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item ">
+                                                <div data-color="White" class="button cmv-white active cmv-cluster-color"></div>
+                                                <div class="button-content"> White </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="Copper" class="button cmv-copper cmv-cluster-color"></div>
+                                                <div class="button-content"> Copper </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="Green" class="button cmv-green cmv-cluster-color"></div>
+                                                <div class="button-content"> Green </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="cmvClusterSizeSelect">
+                                        <div id="sizeTitleCluster" class="title">
+                                            <h4>Cluster Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div id="var2" class="main-item ">
+                                                <div data-size="small" class="button cmv-grey-2  cmv-cluster-size-container active">Small</div>
+                                            </div>
+                                            <div id="var3" class="main-item ">
+                                                <div data-size="large" class="button cmv-cluster-size-container cmv-grey-2">Large</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvClusterDiaSelect" >
+                                        <div id="diaTitleCluster" class="title">
+                                            <h4>Cluster Diameter</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div id="var1" class="main-item">
+                                                <div data-dia="150" class="button cmv-cluster-dia-container cmv-grey-2 active">150mm</div>
+                                            </div>
+                                            <div id="var2" class="main-item ">
+                                                <div data-dia="200" class="button cmv-grey-2  cmv-cluster-dia-container">200mm</div>
+                                            </div>
+                                            <div id="var3" class="main-item ">
+                                                <div data-dia="250" class="button cmv-grey-2  cmv-cluster-dia-container">250mm</div>
+                                            </div>
+                                            <div id="var4" class="main-item ">
+                                                <div data-dia="300" class="button cmv-cluster-dia-container cmv-grey-2">300mm</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                                
+                                <div id="cmvFog" class="cmv-hide">
+                                    <div id="cmvFogSize">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-fog-size-container">
+                                                <div data-size="small" class="button select-fog-size cmv-grey-2 active">Small</div>
+                                            </div>
+                                            <div class="main-item  select-fog-size-container">
+                                                <div data-size="medium" class="button select-fog-size cmv-grey-2">Medium</div>
+                                            </div>
+                                            <div class="main-item  select-fog-size-container">
+                                                <div data-size="large" class="button select-fog-size cmv-grey-2">Large</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvFogColor">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  ">
+                                                <div data-color="Black" style="background-color: rgb(11, 11, 11);" class="button active cmv-fog-color"></div>
+                                                <div class="button-content"> Black </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="Copper" style="background-color:  rgb(189, 125, 30);" class="button cmv-fog-color"></div>
+                                                <div class="button-content"> Copper </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="White" style="background-color: rgb(244, 244, 244);" class="button cmv-fog-color"></div>
+                                                <div class="button-content"> White </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cmvLandscape" class="cmv-hide">
+                                    <div id="cmvLandscapeSize">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-landscape-size-container">
+                                                <div data-size="Small" class="button select-landscape-size cmv-grey-2 active">Small</div>
+                                            </div>
+                                            <div class="main-item  select-landscape-size-container">
+                                                <div data-size="Large" class="button select-landscape-size cmv-grey-2">Large</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="cmvLandscapeColor">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Color</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item ">
+                                                <div data-color="White" style="background-color:rgb(244, 244, 244);" class="button cmv-landscape-color"></div>
+                                                <div class="button-content"> White </div>
+                                            </div>
+                                            <div class="main-item  ">
+                                                <div data-color="Black" style="background-color: rgb(11, 11, 11);" class="button active cmv-landscape-color"></div>
+                                                <div class="button-content"> Black </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="Purple" style="background-color: #AC97D2;" class="button cmv-landscape-color"></div>
+                                                <div class="button-content"> Purple </div>
+                                            </div>
+                                            <div class="main-item ">
+                                                <div data-color="Blue" style="background-color: #7399C5;" class="button cmv-landscape-color"></div>
+                                                <div class="button-content"> Blue </div>
+                                            </div>
+
+                                            <div class="main-item ">
+                                                <div data-color="Aluminum (Aulgrey)" style="background-color: rgb(172, 172, 172);" class="button cmv-landscape-color"></div>
+                                                <div class="button-content"> Aulgrey </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cmvCamouflage" class="cmv-hide">
+                                    <div id="cmvCamouflageSize">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-camouflage-size-container">
+                                                <div data-size="500" class="button select-camouflage-size cmv-grey-2 active">500</div>
+                                            </div>
+                                            <div class="main-item  select-camouflage-size-container">
+                                                <div data-size="800" class="button select-camouflage-size cmv-grey-2">800</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cmvFisherman" class="cmv-hide">
+                                    <div id="cmvFishermanSize">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Size</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-fisherman-size-container">
+                                                <div data-size="Small" class="button select-fisherman-size cmv-grey-2 active">Small</div>
+                                            </div>
+                                            <div class="main-item  select-fisherman-size-container">
+                                                <div data-size="Medium" class="button select-fisherman-size cmv-grey-2">Medium</div>
+                                            </div>
+                                            <div class="main-item  select-fisherman-size-container">
+                                                <div data-size="Large" class="button select-fisherman-size cmv-grey-2">Large</div>
+                                            </div>
+                                        </div>
+
+                                        <div id="cmvFishermaneColor">
+                                            <div id="colorTitle" class="title">
+                                                <h4>Select Color</h4>
+                                            </div>
+                                            <!-- title-end -->
+                                            <!-- product-selet -->
+                                            <div class="option-select">
+                                                <div class="main-item ">
+                                                    <div data-color="orange" style="background-color:  #F1AD56;" class="button active cmv-fisherman-color"></div>
+                                                    <div class="button-content"> Orange </div>
+                                                </div>
+                                                <div class="main-item  ">
+                                                    <div data-color="white" style="background-color: rgb(244, 244, 244);" class="button  cmv-fisherman-color"></div>
+                                                    <div class="button-content"> White </div>
+                                                </div>
+                                                <div class="main-item ">
+                                                    <div data-color="natural" style="background-color: rgb(166, 149, 131);" class="button cmv-fisherman-color"></div>
+                                                    <div class="button-content"> Natural </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="cmvGrid" class="cmv-hide">
+                                    <div id="cmvGridType">
+                                        <div id="colorTitle" class="title">
+                                            <h4>Select Type</h4>
+                                        </div>
+                                        <!-- title-end -->
+                                        <!-- product-selet -->
+                                        <div class="option-select">
+                                            <div class="main-item  select-grid-type-container">
+                                                <div data-type="Square" class="button select-grid-type cmv-grey-2 active">Square</div>
+                                            </div>
+                                            <div class="main-item  select-grid-type-container">
+                                                <div data-type="Expanded" class="button select-grid-type cmv-grey-2">Expanded</div>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="cmvGridColor">
+                                            <div id="colorTitle" class="title">
+                                                <h4>Select Color</h4>
+                                            </div>
+                                            <!-- title-end -->
+                                            <!-- product-selet -->
+                                            <div class="option-select">
+                                                <div class="main-item ">
+                                                    <div data-color="metallic" style="background-color: rgb(217, 217, 217);" class="button active cmv-grid-color"></div>
+                                                    <div class="button-content"> Metallic </div>
+                                                </div>
+                                                <div class="main-item  ">
+                                                    <div data-color="yellow" style="background-color: #F5F591;" class="button  cmv-grid-color"></div>
+                                                    <div class="button-content"> Yellow </div>
+                                                </div>
+                                                <div class="main-item ">
+                                                    <div data-color="orange" style="background-color: #F1AD56;" class="button cmv-grid-color"></div>
+                                                    <div class="button-content"> Orange </div>
+                                                </div>
+
+                                                <div class="main-item ">
+                                                    <div data-color="varnished gold" style="background-color: rgb(237, 214, 145);" class="button cmv-grid-color"></div>
+                                                    <div class="button-content"> Varnished Gold </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sections-start-end -->
+    </main>
+    <!-- main-end -->
+    <!-- scripts -->
+    <script src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/js/qrious.min.js"></script>
+    <script src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.charpstar.net/ZeroLighting/MainConfig/Assets/js/swiper-bundle.min.js"></script>
+    <script>
+        // product-slider
+    const swiper = new Swiper('.product-sliderActive', {
+            // Default parameters
+            slidesPerView: "auto",
+            spaceBetween: 10,
+    })
+    
+    const swiperSub = new Swiper('.product-sliderActive-sub', {
+            // Default parameters
+            slidesPerView: "auto",
+            spaceBetween: 5,
+    })
+    
+    var url = new URL(window.location.href);
+    
+    			// Get the search parameters from the URL
+    			var params = new URLSearchParams(url.search);
+    
+    			// Get the value of the "code" parameter
+    			var codeValue = params.get('code');
+    			
+    			
+    			if(!codeValue) { 
+    			    const viewer = document.querySelector("model-viewer")
+                    viewer.setAttribute('src', "compose-inombo" );
+    			}
+    </script>
+</body>
+
+</html>
